@@ -22,7 +22,13 @@ function trace() {
 	var e_value = document.getElementById("s0-value").value;
 	var e = cast(s0_type, s0_value);
 	
-	var s0 = [a , b , c , d ,e]
+	var s0 = { 
+		a: {type: typeof a, value: a},
+		b: {type: typeof b, value: b},
+		c: {type: typeof c, value: c},
+		b: {type: typeof d, value: d},
+		e: {type: typeof e, value: e}
+	};
 
 	var expected_type = document.getElementById("expected-type").value;
 	var expected_value = document.getElementById("expected-value").value;
@@ -43,13 +49,14 @@ function trace() {
 	} catch(err) {
 		throw(err);
 	};
-
+	
 	var s3;
 	try {
-		s3 = c >= d;
+		s3 = s1 && s2;
 	} catch(err) {
 		throw(err);
 	};
+
 	var sf;
 	try {
 		sf = e || s3;
@@ -59,13 +66,16 @@ function trace() {
 
 	// display to user
 	var s0_display = document.getElementById("s0");
-	s0_display.innerHTML = s0_type + ": " + s0_value;
+	s0_display.innerHTML = JSON.stringify(s0);
 
 	var s1_display = document.getElementById("s1");
 	s1_display.innerHTML = typeof s1 + ": " + s1;
 
 	var s2_display = document.getElementById("s2");
 	s2_display.innerHTML = typeof s2 + ": " + s2;
+	
+	var s3_display = document.getElementById("s3");
+	s3_display.innerHTML = typeof s3 + ": " + s3;
 
 	var sf_display = document.getElementById("sf");
 	sf_display.innerHTML = typeof sf + ": " + sf;
