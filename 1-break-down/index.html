@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title></title>
+  <title>op prec & boo</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -17,13 +17,25 @@
 	<script src="trace-block.js"></script>
 
 
-	<h2> Number(String(12345).replace("12", "")); <h2>
+	<h2> a || ((b > c) && (d >= e)) <h2>
 
 	Input:
 	<br>
-		<input type="text" value="type" id="s0-type">
-		<input type="text" value="value" id="s0-value">
+	 a:	<input type="text" value="type" id="a-type">
+		<input type="text" value="value" id="a-value">
 	<br>
+	 b:	<input type="text" value="type" id="b-type">
+		<input type="text" value="value" id="b-value">
+	<br>
+	 c:	<input type="text" value="type" id="c-type">
+		<input type="text" value="value" id="c-value">
+	<br>
+	 d:	<input type="text" value="type" id="d-type">
+		<input type="text" value="value" id="d-value">
+	<br>
+	 e:	<input type="text" value="type" id="e-type">
+		<input type="text" value="value" id="e-value">
+	<br>	
 	Expected:
 	<br>
 	<input type="text" value="type" id="expected-type">
@@ -35,35 +47,45 @@
 	    <th>state</th> 
 	    <th>operation</th>
 	  </tr>
-	  <tr>
+	  <tr>  <!-- 	s0    -->
 	    <td>initial state</td>
 	    <td id="s0"></td> 
 	    <td><button type="button" onclick="trace()">trace it</button></td>
 	  </tr>
-	  <tr>
+	  <tr>  <!-- 	o1    -->
 	    <td></td>
 	    <td></td> 
-	    <td id="o1">String(s0);</td>
+	    <td id="o1">a > b;</td>
 	  </tr>
-	  <tr>
+	  <tr>  <!-- 	s1    -->
 	    <td>state 1</td>
 	    <td id="s1"></td> 
 	    <td></td>
 	  </tr>
-	  <tr>
+	  <tr>  <!-- 	o2    -->
 	    <td></td>
 	    <td></td> 
-	    <td id="o2">s1.replace("12", "");</td>
+	    <td id="o2">c >= d;</td>
 	  </tr>
-	  <tr>
+	  <tr>  <!-- 	s2    -->
 	    <td>state 2</td>
 	    <td id="s2"></td> 
 	    <td></td>
 	  </tr>
-	  <tr>
+	  <tr>  <!-- 	o3    -->
 	    <td></td>
 	    <td></td> 
-	    <td id="o2">Number(s2);</td>
+	    <td id="o3">s1 && s2;</td>
+	  </tr>
+	  <tr>  <!-- 	s3    -->
+	    <td>state 3</td>
+	    <td id="s3"></td> 
+	    <td></td>
+	  </tr>
+	  <tr>  <!-- 	o4    -->
+	    <td></td>
+	    <td></td> 
+	    <td id="o4">e || s3;</td>
 	  </tr>
 	  <tr>
 	    <td>final state</td>
