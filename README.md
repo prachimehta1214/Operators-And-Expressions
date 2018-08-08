@@ -1,7 +1,7 @@
 # Operators-And-Expressions
 
 ## Learning Objectives
-* To understand how to use the operators: // &&, ||, >, >= and their implications
+* To understand how to use the operators: // &&, ||, >, >= and their implications  
 • To use an expression that makes use of one or mroe than Boolean operators and create their trace blocks
 
 ## Snippet Code
