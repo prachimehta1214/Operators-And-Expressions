@@ -2,9 +2,27 @@
 
 function trace() {
 	// read & clean user input
-	var s0_type = document.getElementById("s0-type").value;
-	var s0_value = document.getElementById("s0-value").value;
-	var s0 = cast(s0_type, s0_value);
+	var a_type = document.getElementById("s0-type").value;
+	var a_value = document.getElementById("s0-value").value;
+	var a = cast(s0_type, s0_value);
+	
+	var b_type = document.getElementById("s0-type").value;
+	var b_value = document.getElementById("s0-value").value;
+	var b = cast(s0_type, s0_value);
+	
+	var c_type = document.getElementById("s0-type").value;
+	var c_value = document.getElementById("s0-value").value;
+	var c = cast(s0_type, s0_value);
+	
+	var d_type = document.getElementById("s0-type").value;
+	var d_value = document.getElementById("s0-value").value;
+	var d = cast(s0_type, s0_value);
+	
+	var e_type = document.getElementById("s0-type").value;
+	var e_value = document.getElementById("s0-value").value;
+	var e = cast(s0_type, s0_value);
+	
+	var s0 = [a , b , c , d ,e]
 
 	var expected_type = document.getElementById("expected-type").value;
 	var expected_value = document.getElementById("expected-value").value;
@@ -14,21 +32,27 @@ function trace() {
 	// do the logic
 	var s1;
 	try {
-		s1 = String(s0);
+		s1 = a > b;
 	} catch(err) {
 		throw(err);
 	};
 
 	var s2;
 	try {
-		s2 = s1.replace("12", "");
+		s2 = c >= d;
 	} catch(err) {
 		throw(err);
 	};
 
+	var s3;
+	try {
+		s3 = c >= d;
+	} catch(err) {
+		throw(err);
+	};
 	var sf;
 	try {
-		sf = Number(s2);
+		sf = e || s3;
 	} catch(err) {
 		throw(err);
 	};
